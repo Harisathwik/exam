@@ -1,0 +1,54 @@
+<html>
+<body>
+	<pre>
+		g:<input type="textbox" name="g" id="g"><br>
+		n:<input type="textbox" name="n" id="n"><br>
+		<p id="txt"></p><br>
+		<button onclick="agree()">Agree</buttton>
+		</pre>
+		<pre>
+		A:<input type="textbox" name="A" id="A"><br>
+		B:<input type="textbox" name="B" id="B" ><br>
+		<button onclick="genA()">genA</buttton>
+		<button onclick="genB()">genB</buttton>
+		</pre>
+		<pre>
+		KeyatA:<input type="textbox" name="ka" id="ka"><br>
+		keyAtB:<input type="textbox" name="kb" id="kb"><br>
+		<button onclick="key()">genKey</buttton>
+		</pre>
+	<script>
+		var g, n, x, y, A, B;
+		function agree()
+		{
+			g = parseInt(document.getElementById("g").value);
+			n = parseInt(document.getElementById("n").value);
+			document.getElementById("txt").innerHTML = "Agreed!";
+		}
+
+		function genA()
+		{
+			x = parseInt(Math.random()*10+1);
+			A = parseInt(Math.pow(g,x))%n;
+			document.getElementById("A").value = A;
+			alert(x);
+		}
+		function genB()
+		{
+			y = parseInt(Math.random()*10+1);
+			B = parseInt(Math.pow(g,y))%n;
+			document.getElementById("B").value = B;
+			alert(y);
+		}
+		function key()
+		{
+			alert(A);
+			alert(B);
+			document.getElementById("ka").value = parseInt(Math.pow(B,x))%n;
+			document.getElementById("kb").value = parseInt(Math.pow(A,y))%n;
+		}
+
+
+	</script>
+</body>
+</html>>
