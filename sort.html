@@ -1,0 +1,28 @@
+<html>
+<body onload = "f()">
+	<script>
+		function f()
+		{
+			var a = [];
+			var n = parseInt(prompt("Enter no of nums"));
+			for(let i=0;i<n;i+=1)
+			{
+				a[i] = parseInt(prompt("enter :"));
+			}
+			document.write("<br>Before sorting:<br>");
+			for(let i=0;i<n;i++)
+			{
+				document.write(a[i]+" ");
+			}
+			a.sort(function(a,b){ return a-b});
+			document.write("<br>After sorting(in reverse):<br>")
+			document.write();
+			for(let i=n-1;i>=0;i--)
+			{
+				document.write(a[i]+" ");
+			}
+
+		}
+	</script>
+</body>
+</html>
