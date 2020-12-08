@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<select id="country">
+		<option value="India">India</option>
+		<option value="Pakistan">Pakistan</option>
+		<option value="Bangladesh">Bangladesh</option>
+	</select>
+		<button onclick="f()">Submit</button>
+</body>
+	<script>
+		function f()
+		{
+			var country=document.getElementById("country").value;
+			var capitalof = {
+				"India":"Delhi",
+				"Pakistan":"Istambul",
+				"Bangladesh":"Dhaka"
+			}
+			document.write("Capital of "+country+" is : "+capitalof[country]);
+		}
+	</script>
+</html>
