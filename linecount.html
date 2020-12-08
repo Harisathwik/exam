@@ -1,0 +1,37 @@
+<html>
+<body>
+
+	<form onsubmit = "f()" method = "post">
+		<pre>
+		Enter your text here:
+
+		<textarea id = "txt" rows=10 cols=50></textarea>
+		
+		<input type="submit" value="submit">
+		</pre>
+	</form>>
+	<script>
+		function f()
+		{
+			var msg = document.getElementById("txt").value;
+			var lc = msg.split("\n").length;
+			var wc = 0;
+			var cc = 0;
+			for(each of msg.split("\n"))
+			{
+				wc += each.split(" ").length;
+			}
+			for(each of msg.split("\n"))
+			{
+				for(chars of each.split(" "))
+				{
+					cc += chars.length;
+				}
+			}
+			alert("lc: "+lc);
+			alert("wc: "+wc);
+			alert("cc: "+cc);
+		}
+	</script>
+</body>
+</html>
