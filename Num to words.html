@@ -1,0 +1,74 @@
+<html>
+<body>
+<pre>
+	Enter a num : <input type = "text" id = "tb1">
+
+	<button onclick = "f()"> click me</button>
+</pre>
+<pre>
+	Entered num : <input type = "text" id = "tb2">
+</pre>
+<script>
+	function f()
+	{
+		var strnum = document.getElementById("tb1").value;
+		var wordbox = document.getElementById("tb2");
+		var i = 0;
+		var len = strnum.length;
+
+		var single_digits = ["zero ", "one ", "two ", "three ", "four ", "five ", "six ", "seven ", "eight ", "nine "];
+		var tens_digits = ["","ten ", "eleven ", "twelve ", "thirteen ", "forteen ", "fifteen ", "sixteen ", "seventeen ", "eighteen ", "ninteen "];
+		var tens = ["","","twenty ", "thirty ", "forty ", "fifty ", "sixty ", "seventy ", "eighty ", "ninty"];
+
+		if(Number.isInteger(parseInt(strnum)))
+		{
+			if(parseInt(strnum)>999)
+			{
+				wordbox.value += "Number out of range!";
+				return;
+			}
+
+			if(len == 0)
+			{
+				wordbox.value += "null";
+				return ;
+			}
+			if(len == 1)
+			{
+				wordbox.value += single_digits[parseInt(strnum)];
+				return ;
+			}
+			while(i<strnum.length)
+			{
+				if(len == 3)
+				{
+					wordbox.value += single_digits[parseInt(strnum[i])]+" hundred ";
+					len -= 1;
+				}
+				else
+				{
+					if(strnum[i] == "1")
+						wordbox.value += tens_digits[parseInt(strnum[i])+parseInt(strnum[i+1])];
+					else if(strnum[i] == "2" && strnum[i+1] == "0")
+						wordbox.value += " twenty";
+					else 
+					{
+						var temp = parseInt(strnum[i]);
+						if(temp > 0)
+							wordbox.value += tens[parseInt(strnum[i])];
+						else 
+							wordbox.value += " ";
+						i+=1;
+						if (strnum[i]!=0)
+							wordbox.value +=  single_digits[parseInt(strnum[i])];
+					}
+				}
+				i += 1;	
+			}
+		}
+		else
+			wordbox.value += "Not a number!";
+	}
+</script>
+</body>
+</html>
